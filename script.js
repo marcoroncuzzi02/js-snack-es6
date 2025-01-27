@@ -79,15 +79,17 @@ const squadre = [
     return Math.floor((Math.random() * max) + min);
   }
 
-  let nuovoArray = []
+  // let nuovoArray = []
 
-  for (let i=0; i < squadre.length; i++){
+  for (let i=0; i < squadre.length; i++) {
     let element = squadre[i]
     element.puntiFatti = random(5,90)
     element.falliSubiti = random(1,20)
 
-    nuovoArray.push(element.nome, element.falliSubiti)
   }
-  console.log(squadre, nuovoArray)
+  
+  const nuovoArray = squadre.map( (element) => {
+    return { nome : element.nome, falliSubiti : element.falliSubiti}
+  })
 
-
+console.log( squadre, nuovoArray)
